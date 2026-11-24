@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>زرین‌شاپ | فروشگاه آنلاین طلا</title>
+  <meta name="description" content="زرین‌شاپ؛ خرید آنلاین طلا با قیمت لحظه‌ای، فیلتر بر اساس دسته و وزن، ثبت سفارش سریع.">
+  <meta name="theme-color" content="#123a3a">
+  <link rel="stylesheet" href="../shared/fonts.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="strip">
+    <div class="wrap strip__in" id="strip"></div>
+  </div>
+
+  <header class="bar">
+    <div class="wrap bar__in">
+      <a href="#" class="logo"><span class="logo__icon">ز</span>زرین‌شاپ</a>
+      <label class="search">
+        <span class="sr">جستجو</span>
+        <input id="q" type="search" placeholder="جستجو در محصولات… (مثلاً گردنبند)">
+      </label>
+      <button class="cart-btn" id="open-cart" aria-label="سبد خرید">
+        سبد خرید <span class="count" id="count">۰</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="promo wrap">
+    <div class="promo__main">
+      <p class="tag">ارسال رایگان بالای ۲۰ میلیون</p>
+      <h1>خرید آنلاین طلا با <b>قیمت لحظه‌ای</b></h1>
+      <p>قیمت همه محصولات بر اساس نرخ روز طلا، وزن و اجرت به‌صورت خودکار محاسبه می‌شود.</p>
+    </div>
+    <div class="promo__side">
+      <div class="mini"><img src="../shared/img/coin.svg" alt=""><span>سکه و شمش<br><small>با کمترین اجرت</small></span></div>
+      <div class="mini"><img src="../shared/img/ring.svg" alt=""><span>انگشتر نامزدی<br><small>ضمانت تعویض</small></span></div>
+    </div>
+  </section>
+
+  <main class="wrap shop">
+    <aside class="filters" id="filters">
+      <div class="filters__head">
+        <h2>فیلترها</h2>
+        <button type="button" class="link" id="reset">پاک کردن</button>
+      </div>
+      <fieldset>
+        <legend>دسته‌بندی</legend>
+        <div id="cats"></div>
+      </fieldset>
+      <fieldset>
+        <legend>حداکثر وزن: <b id="wlabel"></b> گرم</legend>
+        <input type="range" id="maxw" min="1" max="13" step="0.5" value="13">
+      </fieldset>
+      <fieldset>
+        <legend>مرتب‌سازی</legend>
+        <select id="sort">
+          <option value="new">جدیدترین</option>
+          <option value="cheap">ارزان‌ترین</option>
+          <option value="exp">گران‌ترین</option>
+          <option value="light">سبک‌ترین</option>
+        </select>
+      </fieldset>
+      <div class="trust">
+        <p>✓ فاکتور رسمی با کد رهگیری</p>
+        <p>✓ ۷ روز ضمانت بازگشت</p>
+        <p>✓ ارسال بیمه‌شده</p>
+      </div>
+    </aside>
+
+    <section>
+      <div class="results">
+        <button class="filter-toggle" id="toggle-filters" type="button">فیلترها ☰</button>
+        <span id="result-count"></span>
+      </div>
+      <div class="catalog" id="catalog"></div>
+    </section>
+  </main>
+
+  <section class="wrap how">
+    <h2>خرید در ۳ مرحله</h2>
+    <ol>
+      <li><b>انتخاب محصول</b><span>محصول را به سبد اضافه کنید.</span></li>
+      <li><b>ثبت سفارش</b><span>سفارش از طریق واتس‌اپ برای ما ارسال می‌شود.</span></li>
+      <li><b>تحویل</b><span>پس از تایید قیمت نهایی، ارسال بیمه‌شده انجام می‌شود.</span></li>
+    </ol>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap footer__in">
+      <div><b>زرین‌شاپ</b><p>نمونه طراحی فروشگاه اینترنتی طلا</p></div>
+      <div><b>تماس</b><p dir="ltr" class="ltr-start">۰۲۱-۰۰۰۰۰۰۰۰</p><p>مشهد، بلوار سجاد، پلاک ۱۰</p></div>
+      <div><b>مجوزها</b><div class="badge-box">نماد اعتماد</div></div>
+    </div>
+  </footer>
+
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="drawer" id="drawer" aria-label="سبد خرید" aria-hidden="true">
+    <div class="drawer__head">
+      <h2>سبد خرید</h2>
+      <button type="button" id="close-cart" aria-label="بستن">✕</button>
+    </div>
+    <ul class="drawer__list" id="cart-list"></ul>
+    <div class="drawer__foot">
+      <div class="sum"><span>جمع تقریبی</span><b id="cart-total">۰ تومان</b></div>
+      <p class="note">قیمت نهایی در لحظه ثبت سفارش بر اساس نرخ روز تایید می‌شود.</p>
+      <a class="btn btn--wa" id="checkout" href="#">ثبت سفارش در واتس‌اپ</a>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="../shared/gold.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

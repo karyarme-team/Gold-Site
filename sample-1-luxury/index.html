@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>گالری طلای آفتاب | طلا و جواهر لوکس</title>
+  <meta name="description" content="گالری طلای آفتاب؛ طلا و جواهرات دست‌ساز، سکه و شمش با قیمت روز و ضمانت اصالت.">
+  <meta name="theme-color" content="#0d0b08">
+  <link rel="stylesheet" href="../shared/fonts.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar__in">
+      <a class="logo" href="#">
+        <span class="logo__mark">آ</span>
+        <span>گالری طلای <b>آفتاب</b></span>
+      </a>
+      <button class="menu-btn" aria-label="منو" aria-expanded="false">☰</button>
+      <nav class="nav">
+        <a href="#prices">قیمت روز</a>
+        <a href="#collection">کالکشن</a>
+        <a href="#calc">محاسبه قیمت</a>
+        <a href="#about">درباره ما</a>
+        <a href="#contact" class="btn btn--sm">تماس</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero__in">
+      <div class="hero__text">
+        <p class="eyebrow">از سال ۱۳۶۸ — بازار بزرگ تهران</p>
+        <h1>درخشش ماندگار<br><span class="gold-text">طلای اصیل</span></h1>
+        <p class="lead">جواهرات دست‌ساز با عیار تضمینی، فاکتور رسمی و قیمت‌گذاری شفاف بر اساس نرخ لحظه‌ای بازار.</p>
+        <div class="hero__cta">
+          <a href="#collection" class="btn">مشاهده کالکشن</a>
+          <a href="#calc" class="btn btn--ghost">محاسبه قیمت</a>
+        </div>
+        <ul class="badges">
+          <li><b>۱۸</b> عیار استاندارد</li>
+          <li><b>+۳۰</b> سال سابقه</li>
+          <li><b>۱۰۰٪</b> ضمانت اصالت</li>
+        </ul>
+      </div>
+      <div class="hero__art" aria-hidden="true">
+        <div class="ring-glow"></div>
+        <img src="../shared/img/ring.svg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-label="قیمت‌های لحظه‌ای">
+    <div class="ticker__track" id="ticker"></div>
+  </div>
+
+  <section id="prices" class="section">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow">نرخ لحظه‌ای</p>
+        <h2>قیمت طلا و سکه امروز</h2>
+        <p class="muted">آخرین به‌روزرسانی: <span id="updated"></span> — <small>(اعداد نمونه هستند)</small></p>
+      </header>
+      <div class="price-grid" id="price-grid"></div>
+    </div>
+  </section>
+
+  <section id="collection" class="section section--alt">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow">کالکشن ۱۴۰۵</p>
+        <h2>منتخب گالری</h2>
+      </header>
+      <div class="products" id="products"></div>
+    </div>
+  </section>
+
+  <section id="calc" class="section">
+    <div class="wrap calc">
+      <div>
+        <p class="eyebrow">شفافیت در قیمت</p>
+        <h2>ماشین‌حساب قیمت طلا</h2>
+        <p class="muted">قیمت نهایی = طلای خام + اجرت ساخت + سود فروشنده + مالیات بر ارزش افزوده (روی اجرت و سود).</p>
+      </div>
+      <form class="calc__box" id="calc-form" onsubmit="return false">
+        <label>وزن (گرم)<input data-calc="weight" inputmode="decimal" value="5"></label>
+        <label>عیار
+          <select data-calc="karat"><option value="18">۱۸ عیار</option><option value="21">۲۱ عیار</option><option value="24">۲۴ عیار</option></select>
+        </label>
+        <label>اجرت ساخت (٪)<input data-calc="wage" inputmode="decimal" value="15"></label>
+        <label>سود فروشنده (٪)<input data-calc="profit" inputmode="decimal" value="7"></label>
+        <label>مالیات (٪)<input data-calc="tax" inputmode="decimal" value="10"></label>
+        <dl class="calc__out">
+          <div><dt>طلای خام</dt><dd><span data-out="base"></span> تومان</dd></div>
+          <div><dt>اجرت</dt><dd><span data-out="wage"></span> تومان</dd></div>
+          <div><dt>سود</dt><dd><span data-out="profit"></span> تومان</dd></div>
+          <div><dt>مالیات</dt><dd><span data-out="tax"></span> تومان</dd></div>
+          <div class="total"><dt>قیمت نهایی</dt><dd><span data-out="total"></span> تومان</dd></div>
+        </dl>
+      </form>
+    </div>
+  </section>
+
+  <section id="about" class="section section--alt">
+    <div class="wrap about">
+      <div class="about__art" aria-hidden="true"><img src="../shared/img/necklace.svg" alt=""></div>
+      <div>
+        <p class="eyebrow">داستان ما</p>
+        <h2>سه نسل، یک تعهد</h2>
+        <p>گالری طلای آفتاب در سال ۱۳۶۸ با یک کارگاه کوچک در بازار تهران آغاز به کار کرد. امروز با تیمی از استادکاران باتجربه، طراحی‌های کلاسیک و مدرن را با کیفیتی ماندگار عرضه می‌کنیم.</p>
+        <ul class="features">
+          <li><b>فاکتور رسمی</b> با کد رهگیری و ذکر وزن و عیار</li>
+          <li><b>بازخرید</b> با بهترین قیمت روز</li>
+          <li><b>سفارش اختصاصی</b> حک اسم و طراحی دلخواه</li>
+          <li><b>ارسال بیمه‌شده</b> به سراسر کشور</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="wrap contact">
+      <div>
+        <p class="eyebrow">در خدمت شما هستیم</p>
+        <h2>تماس و آدرس</h2>
+        <ul class="contact__list">
+          <li><span>آدرس</span>تهران، بازار بزرگ، راسته زرگرها، پلاک ۱۲</li>
+          <li><span>تلفن</span><a href="tel:+982100000000" dir="ltr">۰۲۱-۰۰۰۰۰۰۰۰</a></li>
+          <li><span>ساعت کاری</span>شنبه تا پنج‌شنبه ۹ تا ۱۹</li>
+        </ul>
+        <div class="socials">
+          <a class="btn" href="https://wa.me/989000000000">واتس‌اپ</a>
+          <a class="btn btn--ghost" href="https://instagram.com/">اینستاگرام</a>
+        </div>
+      </div>
+      <div class="map" aria-label="نقشه (جایگزین)">
+        <span>محل نقشه<br><small>(نشان / بلد / گوگل‌مپ)</small></span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">© ۱۴۰۵ گالری طلای آفتاب — نمونه طراحی سایت</div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/989000000000" aria-label="واتس‌اپ">✆</a>
+
+  <script src="../shared/gold.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

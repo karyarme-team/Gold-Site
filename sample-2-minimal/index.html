@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>طلا و جواهر مهرسا | زیبایی در سادگی</title>
+  <meta name="description" content="طلا و جواهر مهرسا؛ طراحی‌های مینیمال و روزمره، قیمت لحظه‌ای طلا و سکه، ماشین‌حساب قیمت.">
+  <meta name="theme-color" content="#faf6ef">
+  <link rel="stylesheet" href="../shared/fonts.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="head wrap">
+    <a href="#" class="brand">مهرسا<span>.</span></a>
+    <nav class="links">
+      <a href="#shop">محصولات</a>
+      <a href="#rates">قیمت روز</a>
+      <a href="#calc">محاسبه</a>
+      <a href="#visit">مراجعه حضوری</a>
+    </nav>
+    <a href="tel:+982100000000" class="call" dir="ltr">۰۲۱-۰۰۰۰۰۰۰۰</a>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <div class="hero__copy">
+        <h1>طلای روزمره،<br><em>برای هر لحظه.</em></h1>
+        <p>طراحی‌های سبک و مینیمال که هر روز همراه شما هستند. ساخت ایران، عیار ۷۵۰ با فاکتور رسمی.</p>
+        <a href="#shop" class="link-arrow">دیدن محصولات ←</a>
+      </div>
+      <div class="hero__tiles">
+        <div class="tile tile--a"><img src="../shared/img/necklace.svg" alt=""></div>
+        <div class="tile tile--b"><img src="../shared/img/earring.svg" alt=""></div>
+        <div class="tile tile--c"><img src="../shared/img/bracelet.svg" alt=""></div>
+      </div>
+    </section>
+
+    <section id="rates" class="rates">
+      <div class="wrap">
+        <div class="rates__head">
+          <h2>قیمت امروز</h2>
+          <span class="stamp">به‌روزرسانی: <span id="updated"></span> · اعداد نمونه</span>
+        </div>
+        <table class="rate-table">
+          <thead><tr><th>نوع</th><th>قیمت</th><th>تغییر</th></tr></thead>
+          <tbody id="rate-rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="shop" class="wrap block">
+      <div class="block__head">
+        <h2>محصولات</h2>
+        <div class="chips" id="chips"></div>
+      </div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <section id="calc" class="wrap block calc">
+      <div class="calc__intro">
+        <h2>قیمت را خودتان حساب کنید</h2>
+        <p>وزن و اجرت روی برچسب هر محصول درج شده است. با وارد کردن آن‌ها، قیمت نهایی را ببینید.</p>
+        <ol class="formula">
+          <li>وزن × قیمت هر گرم</li>
+          <li>+ اجرت ساخت</li>
+          <li>+ ۷٪ سود</li>
+          <li>+ ۱۰٪ مالیات بر (اجرت + سود)</li>
+        </ol>
+      </div>
+      <form id="calc-form" class="calc__form" onsubmit="return false">
+        <div class="row">
+          <label>وزن (گرم)<input data-calc="weight" inputmode="decimal" value="3.5"></label>
+          <label>اجرت (٪)<input data-calc="wage" inputmode="decimal" value="18"></label>
+        </div>
+        <div class="seg" role="radiogroup" aria-label="عیار">
+          <input type="hidden" data-calc="karat" value="18" id="karat">
+          <button type="button" class="on" data-k="18">۱۸ عیار</button>
+          <button type="button" data-k="21">۲۱ عیار</button>
+          <button type="button" data-k="24">۲۴ عیار</button>
+        </div>
+        <div class="result">
+          <span>قیمت نهایی</span>
+          <strong><span data-out="total"></span> تومان</strong>
+          <small>طلای خام <span data-out="base"></span> · اجرت <span data-out="wage"></span> · سود <span data-out="profit"></span> · مالیات <span data-out="tax"></span></small>
+        </div>
+      </form>
+    </section>
+
+    <section class="wrap block quotes">
+      <blockquote>«برای سالگرد ازدواجمان یک گردنبند سفارشی ساختند؛ دقیقاً همان چیزی که می‌خواستم.»<cite>— سارا، تهران</cite></blockquote>
+      <blockquote>«قیمت‌ها کاملاً شفاف بود و فاکتور رسمی دادند. خرید آنلاین هم خیلی راحت بود.»<cite>— مهدی، اصفهان</cite></blockquote>
+      <blockquote>«بازخرید طلای قدیمی‌ام را با قیمت منصفانه انجام دادند.»<cite>— نرگس، شیراز</cite></blockquote>
+    </section>
+
+    <section id="visit" class="visit">
+      <div class="wrap visit__in">
+        <div>
+          <h2>به فروشگاه سر بزنید</h2>
+          <p>تهران، خیابان ولیعصر، بالاتر از ونک، مجتمع تجاری نمونه، طبقه همکف، واحد ۸</p>
+          <p class="hours">شنبه تا پنج‌شنبه · ۱۰ صبح تا ۹ شب</p>
+        </div>
+        <div class="visit__cta">
+          <a href="https://wa.me/989000000000" class="pill pill--dark">پیام در واتس‌اپ</a>
+          <a href="https://instagram.com/" class="pill">اینستاگرام</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot wrap">
+    <span>مهرسا<span class="dot">.</span> — نمونه طراحی سایت طلافروشی</span>
+    <span>© ۱۴۰۵</span>
+  </footer>
+
+  <script src="../shared/gold.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
